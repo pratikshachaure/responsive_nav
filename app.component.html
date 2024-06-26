@@ -1,0 +1,120 @@
+ 
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+   
+  }
+  .header {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(239, 235, 235);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .logo {
+    height: 80px;
+    width: 80px;
+  }
+  .logo img {
+    height: 100%;
+    width: 100%;
+  }
+  .bar {
+    display: none;
+    cursor: pointer;
+  }
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .tabs .t {
+    margin: 0 10px;
+  }
+  .input {
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (max-width: 767px) {
+    .header {
+      flex-direction: row-reverse;
+    }
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 60%;
+      background-color: rgb(239, 235, 235);
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      transition: left 0.3s ease;
+    }
+    .tabs.show {
+      left: -11px;
+      top: 90px;
+    }
+    .tabs .t {
+      margin: 10px 0;
+    }
+    .bar {
+      display: block;
+      float: right;
+    }
+    .input {
+      display: none;
+    }
+    #two {
+      display: block;
+      text-align: left;
+    }
+    body{
+      position: relative;
+      top:0;
+      z-index: 20;
+    }
+    .tabs{
+      position: absolute;
+      z-index: 30;
+      opacity: 0.2s;
+    }
+  }
+</style>
+ 
+ 
+
+<div class="header">
+  <div class="bar" >
+    <i class="fa-solid fa-bars fa-2x" (click)="myfun()" id="one"></i>
+    <i class="fa-regular fa-circle-xmark fa-2x" id="two" style="display: none;" (click)="displaynone()"></i>
+  </div>
+  <div class="logo">
+    <img src="https://www.letourstoindia.com/wp-content/uploads/2017/01/lt_logo_dark-1.png" alt="Logo">
+  </div>
+  <div class="tabs">
+    <div class="t">Home</div>
+    <div class="t">About</div>
+    <div class="t">Section</div>
+    <div class="t">Learning</div>
+    <div class="t">Travel Info</div>
+    <div class="t">About India</div>
+    <div class="t">Events</div>
+  </div>
+  <div class="input">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+
+ 
+ 
